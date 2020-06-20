@@ -1,8 +1,8 @@
-# Chat Widget built with Angular Elements
+# Web Chat Widget 
 
 Angular Elements allows you to create Custom Elements (from the WebComponents spec) from Angular Components.
 
-This means that those components can be used outside of an Angular app!
+This means that the widget can be integrated on any website!
 
 ## Project Structure
 
