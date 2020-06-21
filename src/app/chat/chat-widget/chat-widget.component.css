@@ -13,10 +13,10 @@
 }
 
 .chat-button {
-  z-index: 100;
+  z-index: 9999;
   width: 60px;
   height: 60px;
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 40px;
   box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
@@ -44,7 +44,7 @@
 
 .chat-box {
   z-index: 9999;
-  position: absolute;
+  position: fixed;
   left: 0;
   height: 100vh;
   width: 100vw;
@@ -265,6 +265,10 @@ Sent message style
 /* Medium devices (tablets, 768px and up)*/
 @media (min-height: 768px) {
   .chat-box {
+    z-index: 100;
+  }
+
+  .chat-button {
     z-index: 100;
   }
 }
