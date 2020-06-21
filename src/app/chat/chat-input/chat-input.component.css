@@ -1,6 +1,6 @@
 .chat-input-text {
-  margin: 14px 0 0 14px;
-  height: 25px;
+  margin: 7px 0 0 14px;
+  height: 32px;
   width: 70%;
   border: 0;
   resize: none;
@@ -11,14 +11,20 @@
   font-size: 14px;
   background-color: inherit;
   color: inherit;
+
+  overflow: hidden;
+  text-align: left;
 }
+
 
 .chat-input-text::-webkit-input-placeholder {
   color: inherit;
 }
+
 .chat-input-text::-moz-placeholder {
   color: inherit;
 }
+
 .chat-input-text::-ms-input-placeholder {
   color: inherit;
 }

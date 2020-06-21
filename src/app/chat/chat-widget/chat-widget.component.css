@@ -13,7 +13,7 @@
 }
 
 .chat-button {
-  z-index: 1;
+  z-index: 100;
   width: 60px;
   height: 60px;
   position: absolute;
@@ -27,6 +27,7 @@
   color: #fff;
   font-size: 32px;
 }
+
 .chat-button-header {
   z-index: 1;
   font-weight: bold;
@@ -42,7 +43,7 @@
 }
 
 .chat-box {
-  z-index: 2;
+  z-index: 9999;
   position: absolute;
   left: 0;
   height: 100vh;
@@ -54,9 +55,11 @@
   box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
   background: #1976d2;
 }
+
 .chat-box-hidden {
   display: none;
 }
+
 .chat-box-header {
   padding: 10px;
   color: #fff;
@@ -79,18 +82,23 @@
 .operator-name {
   margin: 0;
   padding: 1px;
+  color: #fff;
+  text-align: left;
 }
 
 .operator-status {
   float: right;
   padding: 4px;
 }
+
 .operator-status span {
   margin-left: 4px;
 }
+
 .operator-status-online {
   color: lawngreen;
 }
+
 .operator-status-offline {
   color: red;
 }
@@ -206,6 +214,7 @@ Sent message style
 .blue .chat-button {
   background: #1976d2;
 }
+
 .blue .chat-box {
   background: #1976d2;
 }
@@ -213,6 +222,7 @@ Sent message style
 .grey .chat-button {
   background: #454549;
 }
+
 .grey .chat-box {
   background: #454549;
 }
@@ -220,6 +230,7 @@ Sent message style
 .red .chat-button {
   background: #DD0031;
 }
+
 .red .chat-box {
   background: #DD0031;
 }
@@ -231,12 +242,15 @@ Sent message style
     right: 0;
     width: 300px;
   }
+
   .chat-button {
     display: block;
   }
+
   .chat-button-header {
     display: none;
   }
+
   .chat-box {
     top: auto;
     left: auto;
@@ -245,6 +259,13 @@ Sent message style
     height: 60vh;
     width: 300px;
     border-radius: 10px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-height: 768px) {
+  .chat-box {
+    z-index: 100;
   }
 }
 
@@ -258,7 +279,7 @@ Sent message style
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
   .chat-box {
-    height: 80vh;
+    height: 75vh;
   }
 }
 

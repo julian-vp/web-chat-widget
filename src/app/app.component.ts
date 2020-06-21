@@ -4,9 +4,14 @@ import { Component } from '@angular/core'
   selector: 'app-root',
   template: `
     <chat-config [(theme)]="theme"></chat-config>
-    <chat-widget [theme]="theme"></chat-widget>
+    <chat-widget [theme]="theme" [merchantId]="merchantId"
+    [appEnv]="appEnv" [agentEnv]="agentEnv"></chat-widget>
   `,
 })
 export class AppComponent {
-  public theme = 'blue'
+  public theme = 'blue';
+  public merchantId = 'pH5vsgNnJQzP820kfDia';
+  public agentId = undefined;
+  public appEnv = 'dev';
+  public agentEnv = 'draft';
 }
