@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:5000/swifter-ai-app-dev/us-central1/dialogflowDemoGateway/chatGateway',
+  apiUrl: 'http://localhost:5000/swifter-ai-app-dev/us-central1/dialogflowGateway/chatGateway',
 };
 
 /*

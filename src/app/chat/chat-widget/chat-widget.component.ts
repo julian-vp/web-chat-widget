@@ -26,8 +26,10 @@ export class ChatWidgetComponent implements OnInit {
   @Input() public agentId?: string;
   @Input() public appEnv: string;
   @Input() public agentEnv: string;
+  @Input() public agentAvatar: string;
 
 
+  public init = true;
   public _visible = false;
   public operator: { name: string; status: string; avatar: string; };
   public client: { userId: string; name: string; status: string; avatar: string; };
@@ -56,6 +58,11 @@ export class ChatWidgetComponent implements OnInit {
 
     console.log('merchantId: ', this.merchantId);
 
+  }
+
+
+  ngOnInit() {
+
     this.operator = {
       name: 'Operator',
       status: 'online',
@@ -66,27 +73,12 @@ export class ChatWidgetComponent implements OnInit {
       userId: generateGUID(),
       name: 'Guest User',
       status: 'online',
-      avatar: `https://firebasestorage.googleapis.com/v0/b/swifter-ai-app-dev.appspot.com/o/dist%2Fweb-chat%2Fuser.png?alt=media&token=9cae9339-7407-4ff0-9630-773eae8ca9a6`,
+      avatar: `https://firebasestorage.googleapis.com/v0/b/swifter-ai-app-prod.appspot.com/o/dist%2Fweb-chat%2Fuser.png?alt=media&token=637a1eee-cd65-40d2-b513-fda71d7c76c5`,
     };
   }
 
-
-  ngOnInit() {
-
-    setTimeout(() => {
-      this._chatService.callAgent(this.client.userId, 'Hi', this.merchantId, this.agentId, this.appEnv, this.agentEnv)
-        .then(response => {
-          this.addMessage(this.operator, response, 'received');
-        });
-    }, 2000);
-
-    setTimeout(() => {
-      this.visible = true;
-    }, 4000);
-  }
-
   public addMessage(from, text, type: 'received' | 'sent') {
-    this.messages.unshift({
+    this.messages.push({
       from,
       text,
       type,
@@ -113,7 +105,19 @@ export class ChatWidgetComponent implements OnInit {
   }
 
   public toggleChat() {
+    this.operator.avatar = this.agentAvatar ||
+      `https://randomuser.me/api/portraits/women/${rand(100)}.jpg`;
+
     this.visible = !this.visible;
+    if (this.init) {
+      this.init = false;
+      this._chatService.callAgent(this.client.userId, 'Hi', this.merchantId, this.agentId, this.appEnv, this.agentEnv)
+        .then(response => {
+
+
+          this.addMessage(this.operator, response, 'received');
+        });
+    }
   }
 
   public sendMessage({ message }) {

@@ -52,8 +52,8 @@ export class ChatService {
             'agentId': agentId && agentId,
             'userId': userId,
             'textMessage': userMessage,
-            'appEnv': appEnv,
-            'agentEnv': agentEnv
+            'appEnv': appEnv || 'prod',
+            'agentEnv': agentEnv || 'prod'
           }
         }).toPromise();
 

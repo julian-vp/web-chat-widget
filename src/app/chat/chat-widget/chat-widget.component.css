@@ -28,6 +28,10 @@
   font-size: 32px;
 }
 
+.chat-button.opened {
+  display: none;
+}
+
 .chat-button-header {
   z-index: 1;
   font-weight: bold;
@@ -66,12 +70,18 @@
 }
 
 .chat-box-main {
-  flex: 1;
+  height: 100%;
   width: 100%;
   background: #f5f5f5;
+  overflow-y: auto;
+}
+
+.chat-container {
+  overflow-y: visible;
+  width: 100%;
+  flex: 1;
   display: flex;
-  flex-direction: column-reverse;
-  overflow: auto;
+  flex-direction: column;
 }
 
 .chat-box-footer {
@@ -243,7 +253,7 @@ Sent message style
     width: 300px;
   }
 
-  .chat-button {
+  .chat-button.opened {
     display: block;
   }
 
