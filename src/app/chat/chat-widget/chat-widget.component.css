@@ -8,7 +8,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  height: 100vh;
+  /* height: 100vh; */
   width: 100vw;
 }
 
@@ -26,6 +26,7 @@
   outline: none;
   color: #fff;
   font-size: 32px;
+  display: none;
 }
 
 .chat-button.opened {
@@ -251,6 +252,10 @@ Sent message style
     top: auto;
     right: 0;
     width: 300px;
+  }
+
+  .chat-button {
+    display: block;
   }
 
   .chat-button.opened {
