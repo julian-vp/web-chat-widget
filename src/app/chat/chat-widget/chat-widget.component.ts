@@ -114,7 +114,6 @@ export class ChatWidgetComponent implements OnInit {
       this._chatService.callAgent(this.client.userId, 'Hi', this.merchantId, this.agentId, this.appEnv, this.agentEnv)
         .then(response => {
 
-
           this.addMessage(this.operator, response, 'received');
         });
     }

@@ -58,7 +58,7 @@ export class ChatService {
         }).toPromise();
 
       // Message
-      const newMessage = data?.queryResult || '<em>no response</em>';
+      const newMessage = data?.queryResult?.fulfillmentText || '<em>no response</em>';
 
       return newMessage;
     } catch (error) {
