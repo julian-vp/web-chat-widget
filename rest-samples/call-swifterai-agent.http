@@ -2,8 +2,8 @@
 @BaseUrl = app.swifter.ai
 
 ### 
-// GET dialogflowGateway
-GET /api/dialogflowGateway?merchantId=wDrDAUnL1Z3V0SlUrEMm&userId=634d-4925-81e8&textMessage=hi&appEnv=prod&agentEnv=prod HTTP/1.1
+// GET chatGateway
+GET /api/chatGateway?merchantId=pH5vsgNnJQzP820kfDia&userId=134d492r81e8&textMessage=hi&appEnv=prod&agentEnv=prod HTTP/1.1
 Host: {{BaseUrl}}
 Connection: keep-alive
 Pragma: no-cache
