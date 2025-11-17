@@ -55,6 +55,12 @@
   const config = document.getElementById('config')
   const widget = document.getElementById('widget')
   config.addEventListener('themeChange', (evt) => widget.theme = evt.detail)
+  widget.operator = {
+    name: 'Operator',
+    status: 'online',
+    avatar: `https://randomuser.me/api/portraits/women/12.jpg`,
+  }
+  widget.messages = []
 </script>
 </body>
 </html>

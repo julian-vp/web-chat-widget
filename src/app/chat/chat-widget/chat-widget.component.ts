@@ -51,7 +51,7 @@ export class ChatWidgetComponent implements OnInit {
 
   public focus = new Subject()
 
-  public operator = {
+  @Input() public operator = {
     name: 'Operator',
     status: 'online',
     avatar: `https://randomuser.me/api/portraits/women/${rand(100)}.jpg`,
@@ -63,7 +63,7 @@ export class ChatWidgetComponent implements OnInit {
     avatar: `https://randomuser.me/api/portraits/men/${rand(100)}.jpg`,
   }
 
-  public messages = []
+  @Input() public messages = []
 
   public addMessage(from, text, type: 'received' | 'sent') {
     this.messages.unshift({
@@ -90,10 +90,12 @@ export class ChatWidgetComponent implements OnInit {
   }
 
   ngOnInit() {
-    setTimeout(() => this.visible = true, 1000)
-    setTimeout(() => {
-      this.addMessage(this.operator, 'Hi, how can we help you?', 'received')
-    }, 1500)
+    if (this.messages.length === 0) {
+      setTimeout(() => this.visible = true, 1000)
+      setTimeout(() => {
+        this.addMessage(this.operator, 'Hi, how can we help you?', 'received')
+      }, 1500)
+    }
   }
 
   public toggleChat() {
